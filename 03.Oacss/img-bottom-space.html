@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Episode #5</title>
+    <style>
+        img {
+            /* diplay를 Block으로 변경, 그러나 inline-block 기준으로 작성된 속성 틀어질 수 있음*/
+            /* display: block; */
+            /* vertical-align으로 해결하는 것을 권장 */
+            vertical-align: top;
+            
+        }
+        body {
+            background-color: black;
+        }
+        .wrapper {
+            background-color: white;
+        }
+        span {
+            background-color: orangered;
+            padding-left: 4px;
+        }
+    </style>
+</head>
+<body>
+<!-- img 하단에 생기는 빈 공간? inline-block이기 때문에 생김
+    inline-block의 vertical-align 기본값이 baseline이기 때문.-->
+    <div class="wrapper">
+        <span>
+        <img style="width: 500px;" src="https://user-images.githubusercontent.com/64844815/82278918-4cd7b200-99c6-11ea-98b1-590624b41151.jpg" alt="">
+        Panda Hip-hop Swag
+        
+        </span>
+    </div>
+</body>
+</html>
