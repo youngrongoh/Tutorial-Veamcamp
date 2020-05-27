@@ -18,8 +18,10 @@ body {
 }
 
 .menu {
-    background-color: dodgerblue;
-    color: black;
+    background-color: #222;
+    border-radius: 50px;
+    box-shadow: -0.2em -0.2em 10px #555, 0.2em 0.2em 10px #111;
+    color: #666;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -29,6 +31,9 @@ body {
     text-align: center;
     line-height: 1;
     padding: 0 0.8em;
+    font-family: 'arial';
+    letter-spacing: 0.2em;
+    text-indent: 0.2em;
 }
 
 .menu-item {
@@ -40,8 +45,12 @@ body {
     display: block;
 }
 
+.menu-item:hover {
+    color: lime
+}
+
 .menu-sub {
-    background-color: aqua;
+    background-color: black;
     white-space: nowrap;
     position: absolute;
     left: 50%;
@@ -50,6 +59,7 @@ body {
     opacity: 0;
     pointer-events: none;
     transition: all .4s;
+    padding: 30px;
 }
 
 .menu-sub:before {
@@ -61,7 +71,26 @@ body {
     height: 20px;
 }
 
+.menu-sub:after {
+    content: ' ';
+    position: absolute;
+    left: 50%;
+    top: -20px;
+    transform: translateX(-50%);
+    right: 0;
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}
+
 .menu-item:hover .menu-sub {
     opacity: 1;
     pointer-events: auto;
+}
+
+.menu-sub a {
+    font-size: 16px;
+    color: #666;
 }
