@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Psuedo Element tooltip</title>
+    <style>
+        body {
+            background-color: #ddd;
+            font-family: 'arial';
+            box-sizing: border-box;
+        }
+        a {
+            text-decoration: none;
+        }
+        .box {
+            width: 200px;
+            height: 50px;
+            background-color: white;
+            border-radius: 25px;
+            font-size: 2rem;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            border-left: 10px solid #eee;
+        }
+        .counter {
+            color: dodgerblue;
+            margin: 5px 15px 0;
+        }
+        .button {
+            display: inline-block;
+            width: 1.2em;
+            height: 1.2em;
+            background-color: #faffcf;
+            color: lightgrey;
+            border-radius: 50%;
+            margin-right: 10px;
+            text-align: center;
+            border: 3px solid lightgrey;
+            line-height: 1.2em;
+            margin: 3px 3px 0;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .counter:before {
+            content: '약 ';
+        }
+        
+        .counter:after {
+            content: 'cm';
+        }
+        .button:after {
+            content: attr(title);
+            background-color: orangered;
+            color: white;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 12px;
+            padding: 0 1em;
+            white-space: nowrap;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+            opacity: 0.1;
+            transition: all 0.5s;
+        }
+        
+        .button:hover:after {
+            opacity: 1;
+            top: -40px;
+            left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span class="counter">0</span>
+        <a class="button plus" title="나의 툴팁!">+</a>
+    </div>
+    <script>
+        var btn = document.querySelector('.button');
+        var n = document.querySelector('.counter');
+        btn.addEventListener('click', ()=>{
+            if (n.innerText < 10){
+                n.innerText = parseInt(n.innerText) + 1;
+            } else {
+                n.innerText = 0;
+            }
+        });
+    </script>
+</body>
+</html>

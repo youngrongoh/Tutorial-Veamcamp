@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Talk</title>
+    <style>
+        body {
+            background-color: #ddd;
+        }
+        .wrapper {
+            width: 500px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .talk-face {
+            border-radius: 50%;
+            border: 5px solid white;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: bisque;
+        }
+        
+        .talk-contents {
+            background-color: white;
+            padding: 2em;
+            color: #999;
+            line-height: 1.5;
+            border-radius: 20px;
+            margin: 0;
+            position: relative;
+            margin-bottom: 2em;
+        }
+        
+        .talk-contents:after {
+            content: ' ';
+            border-width: 1em;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -2em;
+            width: 0;
+            margin: 0 auto;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="talk">
+            <p class="talk-contents">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod inventore libero, maiores tempora quae temporibus, debitis voluptates, nobis unde maxime ipsam harum consequuntur doloremque assumenda cumque ea voluptatum autem totam quia omnis expedita vel ipsa dolorum ad. Eum, sit, eveniet.
+            </p>
+            <img src="" alt="" class="talk-face">
+        </div>
+    </div>
+</body>
+</html>
