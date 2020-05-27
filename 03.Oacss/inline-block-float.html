@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>inline-block과 float의 차이</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: sans-serif;
+        }
+        .grid {
+            width: 500px;
+            margin: 0 auto;
+            background-color: white;
+            color: lightgrey;
+            position: relative;
+        }
+        .grid:after {
+            content: '.grid';
+            position: absolute;
+            bottom: 130px;
+            left: 220px;
+            font-size: 2.5em;
+        }
+        .grid-item {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            color: white;
+            display: inline-block;
+            text-align: center;
+        }
+        .a {
+            background-color: orange;
+        }
+        .b {
+            background-color: orangered;
+        }
+        .c {
+            background-color: red;
+        }
+        .a:after,
+        .b:after,
+        .c:after {
+            display: inline-block;
+            content: '.grid-item';
+            width: 100%;
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Apple
+        Banana
+        Cherry
+    </div>
+    
+    <div class="grid">
+        <div class="grid-item a"></div>
+        <div class="grid-item b"></div>
+        <div class="grid-item c"></div>
+    </div>
+    <script>
+    
+    </script>
+</body>
+</html>
